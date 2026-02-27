@@ -3,6 +3,11 @@ title: Coding Agent × 将棋 AI
 titleTemplate: '%s'
 author: 野田 久順
 theme: default
+fonts:
+  sans: Noto Sans JP
+  mono: Space Mono
+  provider: none
+
 class: text-center
 highlighter: shiki
 lineNumbers: false
@@ -10,6 +15,7 @@ drawings:
   persist: false
 transition: slide-left
 mdc: true
+wakeLock: false
 ---
 
 <div class="cover">
