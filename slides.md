@@ -26,6 +26,29 @@ mdc: true
 </div>
 
 ---
+layout: section
+---
+
+# 自己紹介
+
+---
+layout: two-cols
+---
+
+::left::
+## 野田 久順（ひさより）
+
+ザイオソフト コンピューター将棋サークル所属
+
+### 主な実績
+- 2017年 第5回将棋電王トーナメント 優勝
+- 2021年 CSA貢献賞 受賞
+- 2024年 第34回世界コンピュータ将棋選手権 優勝
+
+::right::
+
+![](./public/assets/denou-tournament-5th-2017.jpg){.intro-photo}
+---
 layout: center
 ---
 
