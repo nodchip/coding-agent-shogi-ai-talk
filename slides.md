@@ -47,7 +47,7 @@ layout: two-cols
 
 ::right::
 
-![](./public/assets/denou-tournament-5th-2017.jpg){.intro-photo}
+![](./public/assets/S0650008697-0024-clipped-Hisayori-Noda.jpg){.intro-photo}
 ---
 layout: center
 ---
