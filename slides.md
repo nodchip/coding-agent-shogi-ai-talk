@@ -1,6 +1,7 @@
 ---
 title: Coding Agent × 将棋 AI
 titleTemplate: '%s'
+author: 野田 久順
 theme: default
 class: text-center
 highlighter: shiki
@@ -16,7 +17,10 @@ mdc: true
   <h1>Coding Agent × 将棋 AI</h1>
   <p class="subtitle">～Coding Agent に将棋 AI を強化してもらった話～</p>
   <div class="meta">
-    <div>nodchip</div>
+    <div>
+      <div>野田 久順</div>
+      <div class="muted">ザイオソフト コンピューター将棋サークル</div>
+    </div>
     <div class="muted">2026-04-19</div>
   </div>
 </div>
