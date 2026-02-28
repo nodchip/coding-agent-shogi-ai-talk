@@ -132,6 +132,8 @@ flowchart TD
   C2 --> D3[...]
   D1 --> E1[...]
   D2 --> E2[...]
+
+  linkStyle default stroke-width:2px;
 ```
 ---
 layout: two-cols
@@ -219,37 +221,35 @@ class: cpu-gpu
 | 主な将棋AI | やねうら王・水匠・tanuki- | dlshogi |
 
 ---
-layout: center
+layout: two-cols
+class: nnue
 ---
 
 ## NNUE 評価関数
 
-- 「局面の良し悪し」を数値化する評価関数の一種
-- GPUやバッチ処理を使わず、CPUで1局面ずつ高速に評価する設計
-- 1手進めたときの差分だけを足し引きするので、探索（読み）と相性が良い
-- ニューラルネットの非線形性で、線形モデルでは表現しにくい評価を狙う
-
----
-layout: two-cols
----
-
-## 全結合ニューラルネットワーク
-
 ::left::
-- CNNではなく全結合型を使い、メモリアクセスを単純化
-- 差分計算がしやすく、CPUでの推論を最優先
-- 隠れ層は浅めで、重い計算は避ける
+
+- ディープラーニングベースの評価関数
+- CPU による高速な推論
+- 全結合ニューラルネットワーク
+- 活性関数に Clipped ReLU を使用
+- 差分計算による効率化
+- 手番の考慮
+- HalfKP 特徴量
+- 整数 SIMD 演算による高速化
 
 ::right::
 
 ```mermaid
-flowchart LR
-  I[入力特徴量] --> H1[全結合層1]
-  H1 --> A1[clipped ReLU]
-  A1 --> H2[全結合層2]
-  H2 --> A2[clipped ReLU]
-  A2 --> H3[全結合層3]
-  H3 --> O[評価値]
+%%{init: {'flowchart': {'useMaxWidth': true, 'rankSpacing': 20, 'nodeSpacing': 20}}}%%
+flowchart TD
+  I[入力特徴量] --> A1[隠れ層1]
+  A1 --> A2[隠れ層2]
+  A2 --> A3[隠れ層3]
+  A3 --> O[評価値]
+
+  classDef default font-weight:700;
+  linkStyle default stroke-width:2px;
 ```
 
 ---
@@ -265,10 +265,34 @@ layout: two-cols
 
 ::right::
 
-![](./public/assets/HalfKP.png){.intro-photo}
+![](./public/assets/HalfKP.png){.halfkp-photo}
 
 玉と玉以外の1駒の組み合わせの例
 盤面上に存在するすべての組み合わせを One-hot 化して足し合わせる
+
+---
+layout: two-cols
+---
+
+## パラメーター数の偏り
+
+::left::
+- 全結合層1 まではパラメーター数大
+- 全結合層1 以降はパラメーター数小
+
+::right::
+
+```mermaid
+flowchart TD
+  subgraph パラメーター数大
+    I[入力特徴量] --> H1[全結合層1]
+  end
+  H1 --> A1[clipped ReLU]
+  A1 --> H2[全結合層2]
+  H2 --> A2[clipped ReLU]
+  A2 --> H3[全結合層3]
+  H3 --> O[評価値]
+```
 
 ---
 layout: center

@@ -192,3 +192,25 @@ a {
   white-space: normal;
   overflow-wrap: break-word;
 }
+/* halfkp */
+.halfkp-photo {
+  width: auto;
+  max-width: 100%;
+  max-height: 300px;
+  margin: 0 auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 14px;
+  border: 1px solid var(--photo-border);
+  background: var(--photo-bg);
+}
+/* nnue-fc */
+.slidev-layout.nnue-fc,
+.slidev-page.nnue-fc {
+  --two-cols-cols: 1.4fr 0.6fr;
+}
+/* nnue */
+.slidev-layout.nnue,
+.slidev-page.nnue {
+  --two-cols-cols: 1.5fr 0.5fr;
+}
