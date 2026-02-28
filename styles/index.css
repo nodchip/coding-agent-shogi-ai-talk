@@ -142,3 +142,25 @@ a {
   object-fit: initial;
   background: transparent;
 }
+
+/* Slide-specific tweaks */
+.slidev-layout.game-tree,
+.slidev-page.game-tree {
+  --two-cols-cols: 1.25fr 0.75fr;
+}
+
+.slidev-layout.game-complexity,
+.slidev-page.game-complexity {
+  --two-cols-cols: 1.35fr 0.65fr;
+}
+
+.slidev-layout.search-eval,
+.slidev-page.search-eval {
+  /* Keep left wider, but give the diagram enough width so text scales up visually. */
+  --two-cols-cols: 1.2fr 0.8fr;
+}
+
+.slidev-layout.game-complexity.two-cols .cols > .col:last-child,
+.slidev-page.game-complexity .slidev-layout.two-cols .cols > .col:last-child {
+  font-size: 18px;
+}

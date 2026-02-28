@@ -48,7 +48,7 @@ frameMaxHeight: 280px
 
 ## 野田 久順
 
-ザイオソフト <NW>コンピューター</NW><NW>将棋</NW><NW>サークル</NW>所属
+ザイオソフト <NW>コンピューター</NW><NW>将棋</NW><NW>サークル</NW><NW>所属</NW>
 
 ### 主な実績
 - 2017年 <NW>第5回</NW><NW>将棋</NW><NW>電王</NW><NW>トーナメント</NW> <NW>優勝</NW>
@@ -98,86 +98,109 @@ frameMaxHeight: 260px
 
 - <NW>将棋を</NW><NW>指す</NW><NW>ソフトウェア</NW>
 - <NW>局面を</NW><NW>入力すると、</NW><NW>推奨手と</NW><NW>評価値を</NW><NW>提示</NW>
-  - <NW>推奨手:</NW>　<NW>次に</NW><NW>指すべき手</NW>
-  - <NW>評価値:</NW>　<NW>先手・後手の</NW><NW>有利さを</NW><NW>示す</NW><NW>数値</NW>
+  - <NW>推奨手:</NW> <NW>次に</NW><NW>指すべき手</NW>
+  - <NW>評価値:</NW> <NW>先手・後手の</NW><NW>有利さを</NW><NW>示す</NW><NW>数値</NW>
 
 ::right::
 [ShogiHome](https://sunfish-shogi.github.io/shogihome/)
 
 ---
 layout: two-cols
+class: game-tree
 ---
 
 ## ゲーム木
 
 ::left::
-- 合法手に基づいて、局面遷移を木構造で表したもの
-- ゲームの状態遷移を原理的にすべて表現できる
-- すべての分岐を調べ切ると、最善手同士の結果を特定できる
-- この過程を「ゲームを解く」と呼ぶ
+- <NW>合法手に</NW><NW>基づいて、</NW><NW>局面遷移を</NW><NW>木構造で</NW><NW>表したもの</NW>
+- <NW>ゲームの</NW><NW>状態遷移を</NW><NW>原理的に</NW><NW>すべて</NW><NW>表現できる</NW>
+- <NW>すべての</NW><NW>分岐を</NW><NW>調べ切ると、</NW><NW>最善手同士の</NW><NW>結果を</NW><NW>特定できる</NW>
+- <NW>この</NW><NW>過程を</NW><NW>「ゲームを解く」</NW><NW>と呼ぶ</NW>
 
 ::right::
 
 ```mermaid
-%%{init: {'flowchart': {'htmlLabels': true, 'useMaxWidth': true}}}%%
+%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart TD
-  A["<img src="./assets/image4.png" width='136px' height='110px'/>"] --> B1["<img src="./assets/image6.png" width='136px' height='110px'/>"]
-  A --> B2["<img src="./assets/image5.png" width='136px' height='110px'/>"]
-  B1 --> C1["<img src="./assets/image8.png" width='136px' height='110px'/>"]
-  B1 --> C2["<img src="./assets/image7.png" width='136px' height='110px'/>"]
+  A@{ img: "/assets/image4.png", h: 110, constraint: "on" } --> B1@{ img: "/assets/image6.png", h: 110, constraint: "on" }
+  A --> B2@{ img: "/assets/image5.png", h: 110, constraint: "on" }
+  B1 --> C1@{ img: "/assets/image8.png", h: 110, constraint: "on" }
+  B1 --> C2@{ img: "/assets/image7.png", h: 110, constraint: "on" }
   B2 --> C3[...]
-  C1 --> D1["<img src="./assets/image9.png" width='136px' height='110px'/>"]
-  C1 --> D2["<img src="./assets/image10.png" width='136px' height='110px'/>"]
+  C1 --> D1@{ img: "/assets/image9.png", h: 110, constraint: "on" }
+  C1 --> D2@{ img: "/assets/image10.png", h: 110, constraint: "on" }
   C2 --> D3[...]
   D1 --> E1[...]
   D2 --> E2[...]
 ```
 ---
 layout: two-cols
+class: game-complexity
 ---
 
 ## 探索量から見たゲームの複雑さ
 
 ::left::
-- ゲームを解くための探索局面数は、複雑さの目安になる
-- 探索局面数 ≒ N^M
-  - N: 平均合法手数
-  - M: 平均終了手数
-- 複雑なゲームでは、現実的な時間内に全探索は不可能
+- <NW>ゲームを</NW><NW>解くための</NW><NW>探索局面数は、</NW><NW>複雑さの</NW><NW>目安になる</NW>
+- <NW>探索局面数</NW><NW>≒</NW><NW>N<sup>M</sup></NW>
+  - <NW>N:</NW><NW>平均合法手数</NW>
+  - <NW>M:</NW><NW>平均終了手数</NW>
+- <NW>複雑な</NW><NW>ゲームでは、</NW><NW>現実的な</NW><NW>時間内に</NW><NW>全探索は</NW><NW>不可能</NW>
 
 ::right::
 
 | ゲーム | 探索局面数 |
 | --- | --- |
-| チェッカー | 10^30 |
-| オセロ | 10^60 |
-| チェス | 10^120 |
-| 中国象棋 | 10^150 |
-| 将棋 | 10^220 |
-| 囲碁 | 10^360 |
+| チェッカー | 10<sup>30</sup> |
+| オセロ | 10<sup>60</sup> |
+| チェス | 10<sup>120</sup> |
+| 中国象棋 | 10<sup>150</sup> |
+| 将棋 | 10<sup>220</sup> |
+| 囲碁 | 10<sup>360</sup> |
 
 ---
 layout: two-cols
+class: search-eval
 ---
 
 ## 探索と評価
 
 ::left::
-- 一定の手数まで「探索」し、到達局面を「評価」する
-  - 探索: 人間の「読み」に相当
-  - 評価: 人間の「大局観」に相当
+- <NW>一定の</NW><NW>手数まで</NW><NW>「探索」し、</NW><NW>到達局面を</NW><NW>「評価」する</NW>
+  - <NW>探索:</NW> <NW>人間の</NW><NW>「読み」に</NW><NW>相当</NW>
+  - <NW>評価:</NW> <NW>人間の</NW><NW>「大局観」に</NW><NW>相当</NW>
 
 ::right::
 
 ```mermaid
+%%{init: {'flowchart': {'useMaxWidth': true, 'htmlLabels': false}}}%%
 flowchart TD
-  A[現在局面] --> B1[候補手A]
-  A --> B2[候補手B]
-  A --> B3[候補手C]
-  B1 --> C1[評価]
-  B2 --> C2[評価]
-  B3 --> C3[評価]
+  A[3] --> B1[3]
+  A --> B2[1]
+  B1 --> C1[7]
+  B1 --> C2[3]
+  B1 --> C3[5]
+  B2 --> C4[2]
+  B2 --> C5[4]
+  B2 --> C6[1]
+
+  C2 -.-> B1
+  C6 -.-> B2
+  B1 -.-> A
+
+  %% Mermaid flowchart docs: use classDef/style to control node visuals (incl. font-size).
+  classDef default font-size:64px,font-weight:700;
+  linkStyle default stroke-width:4px;
 ```
+
+<div style="text-align:center; margin-top: 10px; font-size: 18px; line-height: 1.25">
+  <NW>□:</NW> <NW>局面</NW><br>
+  <NW>□の中の数字:</NW> <NW>評価値</NW><br>
+  <NW>実線:</NW> <NW>差し手（遷移）</NW><br>
+  <NW>破線:</NW> <NW>評価値の伝搬</NW><br>
+  <NW>左側の</NW><NW>状態に</NW><NW>遷移する</NW><NW>手が</NW><NW>最善</NW><br>
+  <NW>この時の</NW><NW>評価値は</NW><NW>3</NW>
+</div>
 
 ---
 layout: center
