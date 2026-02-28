@@ -35,6 +35,12 @@ body {
 .slidev-layout {
   font-family: "Noto Sans JP", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   letter-spacing: 0.01em;
+  font-size: 28px;
+  line-height: 1.5;
+  line-break: strict;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
 }
 
 h1,
@@ -42,6 +48,18 @@ h2,
 h3 {
   font-family: "Space Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   letter-spacing: -0.02em;
+}
+
+.slidev-layout h1 {
+  font-size: 64px;
+}
+
+.slidev-layout h2 {
+  font-size: 44px;
+}
+
+.slidev-layout h3 {
+  font-size: 34px;
 }
 
 .cover {
@@ -87,6 +105,10 @@ a {
   color: var(--accent-2);
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 .slidev-layout.section {
   display: grid;
   place-content: center;
@@ -108,4 +130,15 @@ a {
   border-radius: 14px;
   border: 1px solid var(--photo-border);
   background: var(--photo-bg);
+}
+
+.intro-photo--bio {
+  width: auto;
+  height: auto;
+  max-width: 320px;
+  max-height: 280px;
+  margin: 0 auto;
+  display: block;
+  object-fit: initial;
+  background: transparent;
 }

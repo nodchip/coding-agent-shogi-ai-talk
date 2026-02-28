@@ -38,31 +38,31 @@ layout: section
 # 1. 自己紹介
 
 ---
-layout: two-cols
+layout: image-right-framed
+image: ./public/assets/S0650008697-0024-clipped-Hisayori-Noda.jpg
+backgroundSize: contain
+columns: 1.8fr 0.2fr
+frameMaxWidth: 320px
+frameMaxHeight: 280px
 ---
 
-::left::
-## 野田 久順（ひさより）
+## 野田 久順
 
-ザイオソフト コンピューター将棋サークル所属
+ザイオソフト <NW>コンピューター</NW><NW>将棋</NW><NW>サークル</NW>所属
 
 ### 主な実績
-- 2017年 第5回将棋電王トーナメント 優勝
-- 2021年 CSA貢献賞 受賞
-- 2024年 第34回世界コンピュータ将棋選手権 優勝
-
-::right::
-
-![](./public/assets/S0650008697-0024-clipped-Hisayori-Noda.jpg){.intro-photo}
+- 2017年 <NW>第5回</NW><NW>将棋</NW><NW>電王</NW><NW>トーナメント</NW> <NW>優勝</NW>
+- 2021年 <NW>CSA</NW><NW>貢献賞</NW> <NW>受賞</NW>
+- 2024年 <NW>第34回</NW><NW>世界</NW><NW>コンピュータ</NW><NW>将棋</NW><NW>選手権</NW> <NW>優勝</NW>
 ---
 layout: center
 ---
 
 ## 今日持ち帰ってほしいこと
 
-1. Coding Agent は「実装」だけでなく「検証・反復」まで強い
-2. 強化の鍵は、**依頼の型**と**証拠（再現可能性）**
-3. 将棋 AI でも、設計/実験/可視化を自動化すると伸びる
+1. todo(nodchip): スライド全体を作ってからあとで埋める
+2. 
+3. 
 
 ---
 layout: two-cols
@@ -71,14 +71,13 @@ layout: two-cols
 ## この発表の流れ
 
 ::left::
-- 2. 課題（将棋 AI の前提と痛み）
-- 3. 方針（Agent採用理由）
-- 4. 実行プロセス（指示→実装→検証）
+- 2. todo(nodchip): スライド全体を作ってからあとで埋める
+- 3. 
+- 4. 
 
 ::right::
-- 5. 結果（速度・強さ・品質）
-- 6. 再現可能な運用ルール
-- デモ（できれば）
+- 5. 
+- 6. 
 
 ---
 layout: section
@@ -87,22 +86,23 @@ layout: section
 # 2. 課題
 
 ---
-layout: two-cols
+layout: image-right-framed
+image: ./public/assets/2026-02-27-111526.png
+backgroundSize: contain
+columns: 1fr 380px
+frameMaxWidth: 320px
+frameMaxHeight: 260px
 ---
 
-## 将棋 AI とは
+## 将棋 AI
 
-::left::
-- 将棋を指すソフトウェア
-- 局面を入力すると、推奨手と評価値を提示
-  - 推奨手: 次に指すべき手
-  - 評価値: 先手・後手の有利さを示す数値
+- <NW>将棋を</NW><NW>指す</NW><NW>ソフトウェア</NW>
+- <NW>局面を</NW><NW>入力すると、</NW><NW>推奨手と</NW><NW>評価値を</NW><NW>提示</NW>
+  - <NW>推奨手:</NW>　<NW>次に</NW><NW>指すべき手</NW>
+  - <NW>評価値:</NW>　<NW>先手・後手の</NW><NW>有利さを</NW><NW>示す</NW><NW>数値</NW>
 
 ::right::
-
-![](./public/assets/2026-02-27-111526.png){.intro-photo}
-
-[将棋ホームページ（参考）](https://sunfish-shogi.github.io/shogihome/)
+[ShogiHome](https://sunfish-shogi.github.io/shogihome/)
 
 ---
 layout: two-cols
@@ -118,16 +118,20 @@ layout: two-cols
 
 ::right::
 
-`mermaid
+```mermaid
+%%{init: {'flowchart': {'htmlLabels': true, 'useMaxWidth': true}}}%%
 flowchart TD
-  A[開始局面] --> B1[手1]
-  A --> B2[手2]
-  A --> B3[手3]
-  B1 --> C1[応手1]
-  B1 --> C2[応手2]
-  B2 --> C3[応手1]
-  B3 --> C4[応手1]
-`
+  A["<img src="./assets/image4.png" width='136px' height='110px'/>"] --> B1["<img src="./assets/image6.png" width='136px' height='110px'/>"]
+  A --> B2["<img src="./assets/image5.png" width='136px' height='110px'/>"]
+  B1 --> C1["<img src="./assets/image8.png" width='136px' height='110px'/>"]
+  B1 --> C2["<img src="./assets/image7.png" width='136px' height='110px'/>"]
+  B2 --> C3[...]
+  C1 --> D1["<img src="./assets/image9.png" width='136px' height='110px'/>"]
+  C1 --> D2["<img src="./assets/image10.png" width='136px' height='110px'/>"]
+  C2 --> D3[...]
+  D1 --> E1[...]
+  D2 --> E2[...]
+```
 ---
 layout: two-cols
 ---
@@ -165,7 +169,7 @@ layout: two-cols
 
 ::right::
 
-`mermaid
+```mermaid
 flowchart TD
   A[現在局面] --> B1[候補手A]
   A --> B2[候補手B]
@@ -173,7 +177,7 @@ flowchart TD
   B1 --> C1[評価]
   B2 --> C2[評価]
   B3 --> C3[評価]
-`
+```
 
 ---
 layout: center
@@ -196,16 +200,10 @@ layout: center
 
 ## NNUE 評価関数
 
-- 2018年、那須悠氏により発表
-- 主な特徴
-  - ディープラーニングによる評価関数
-  - CPUでの高速推論
-  - 全結合ニューラルネットワーク
-  - 活性関数は clipped ReLU
-  - 差分計算による効率化
-  - 手番の考慮
-  - HalfKP 特徴量
-  - 整数 SIMD 演算による高速化
+- 「局面の良し悪し」を数値化する評価関数の一種
+- GPUやバッチ処理を使わず、CPUで1局面ずつ高速に評価する設計
+- 1手進めたときの差分だけを足し引きするので、探索（読み）と相性が良い
+- ニューラルネットの非線形性で、線形モデルでは表現しにくい評価を狙う
 
 ---
 layout: two-cols
@@ -214,12 +212,13 @@ layout: two-cols
 ## 全結合ニューラルネットワーク
 
 ::left::
-- 隠れ層 3 層程度の浅いディープラーニング
-- 推論速度を重視した、軽量なネットワーク構成
+- CNNではなく全結合型を使い、メモリアクセスを単純化
+- 差分計算がしやすく、CPUでの推論を最優先
+- 隠れ層は浅めで、重い計算は避ける
 
 ::right::
 
-`mermaid
+```mermaid
 flowchart LR
   I[入力特徴量] --> H1[全結合層1]
   H1 --> A1[clipped ReLU]
@@ -227,7 +226,7 @@ flowchart LR
   H2 --> A2[clipped ReLU]
   A2 --> H3[全結合層3]
   H3 --> O[評価値]
-`
+```
 
 ---
 layout: two-cols
@@ -236,9 +235,9 @@ layout: two-cols
 ## HalfKP 特徴量
 
 ::left::
-- 将棋盤面を表す数値ベクトル
-- 玉の位置と、玉以外の1駒の位置・種類の組を One-hot 化して加算
-- 81 × 1548 = 125,388 次元
+- 盤面を「玉の位置」と「それ以外の1駒」の組で表す特徴
+- 1手で変わる要素が少なく、差分更新に向く
+- 高次元だがスパース（ほぼ0）なので計算を軽くできる
 
 ::right::
 
@@ -253,10 +252,10 @@ layout: center
 
 ## SFNN（Stockfish側のNNUE構成）
 
-- SFNN は、Stockfish で使われる NNUE 系のネットワーク設計
-- 2つの視点（手番側 / 相手側）を並列に処理し、最終評価を合成する
-- 疎な入力を活かす大きな先頭層と、小さな後段層を組み合わせる
-- 低精度整数演算（量子化）を前提に、CPU上で高速に評価できるよう最適化されている
+- NNUE系の代表的な構成例（Stockfishで使われている）
+- 手番側と相手側の2視点を分けて処理し、最後に合成
+- 大きな最初の層＋小さな後段層で、スパース入力を活かす
+- 低精度整数演算（量子化）で、CPU上の高速化を重視
 
 参考: https://official-stockfish.github.io/docs/nnue-pytorch-wiki/docs/nnue.html
 
