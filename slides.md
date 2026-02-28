@@ -251,48 +251,60 @@ flowchart TD
   classDef default font-weight:700;
   linkStyle default stroke-width:2px;
 ```
-
 ---
 layout: two-cols
+class: halfkp
 ---
 
 ## HalfKP 特徴量
 
 ::left::
-- 盤面を「玉の位置」と「それ以外の1駒」の組で表す特徴
-- 1手で変わる要素が少なく、差分更新に向く
-- 高次元だがスパース（ほぼ0）なので計算を軽くできる
+- <NW>盤面を</NW><NW>「玉の位置」と</NW><NW>「それ以外の1駒」の組で</NW><NW>表す</NW><NW>特徴</NW>
+- <NW>1手で</NW><NW>変わる</NW><NW>要素が</NW><NW>少なく、</NW><NW>差分更新に</NW><NW>向く</NW>
+- <NW>高次元だが</NW><NW>スパース（ほぼ0）なので</NW><NW>計算を</NW><NW>軽くできる</NW>
 
 ::right::
 
 ![](./public/assets/HalfKP.png){.halfkp-photo}
 
-玉と玉以外の1駒の組み合わせの例
-盤面上に存在するすべての組み合わせを One-hot 化して足し合わせる
+<div class="halfkp-caption">
+<NW>玉と</NW><NW>玉以外の</NW><NW>駒 1 つの</NW><NW>組み合わせの</NW><NW>例</NW><br>
+<NW>盤面上に</NW><NW>存在する</NW><NW>すべての</NW><NW>組み合わせを</NW><NW>One-hot</NW><NW>化して</NW><NW>足し合わせる</NW>
+</div>
 
 ---
-layout: two-cols
+layout: center
+class: params-bias
 ---
 
 ## パラメーター数の偏り
 
-::left::
-- 全結合層1 まではパラメーター数大
-- 全結合層1 以降はパラメーター数小
+<div class="params-bias-desc">
+<ul>
+  <li>全結合層1 まではパラメーター数: 大</li>
+  <li>全結合層2 以降はパラメーター数: 小</li>
+</ul>
+</div>
 
-::right::
+<div class="params-bias-diag">
 
 ```mermaid
-flowchart TD
-  subgraph パラメーター数大
-    I[入力特徴量] --> H1[全結合層1]
+%%{init: {'flowchart': {'useMaxWidth': true}}}%%
+flowchart LR
+  subgraph "パラメーター数: 大"
+    I[入力特徴量] --> A1[隠れ層1]
   end
-  H1 --> A1[clipped ReLU]
-  A1 --> H2[全結合層2]
-  H2 --> A2[clipped ReLU]
-  A2 --> H3[全結合層3]
-  H3 --> O[評価値]
+  A1 --> A2
+  subgraph "パラメーター数: 小"
+    A2[隠れ層2] --> A3[隠れ層3]
+    A3 --> O[評価値]
+  end
+
+  classDef default font-weight:700;
+  linkStyle default stroke-width:2px;
 ```
+
+</div>
 
 ---
 layout: center
