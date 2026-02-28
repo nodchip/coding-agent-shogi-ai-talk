@@ -188,8 +188,8 @@ flowchart TD
   C6 -.-> B2
   B1 -.-> A
 
-  %% Mermaid flowchart docs: use classDef/style to control node visuals (incl. font-size).
-  classDef default font-size:64px,font-weight:700;
+  class A,B1,B2,C1,C2,C3,C4,C5,C6 sq;
+  classDef sq font-size:64px,font-weight:700;
   linkStyle default stroke-width:4px;
 ```
 
@@ -204,6 +204,7 @@ flowchart TD
 
 ---
 layout: center
+class: cpu-gpu
 ---
 
 ## CPU エンジンと GPU エンジン

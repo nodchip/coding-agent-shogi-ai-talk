@@ -164,3 +164,31 @@ a {
 .slidev-page.game-complexity .slidev-layout.two-cols .cols > .col:last-child {
   font-size: 18px;
 }
+
+.slidev-layout.search-eval .col-right .mermaid,
+.slidev-page.search-eval .slidev-layout.two-cols .col-right .mermaid {
+  min-height: 420px;
+}
+
+.slidev-layout.search-eval .col-right .mermaid svg,
+.slidev-page.search-eval .slidev-layout.two-cols .col-right .mermaid svg {
+  width: 100%;
+  height: 420px;
+}
+
+/* cpu-gpu */
+.slidev-layout.cpu-gpu table,
+.slidev-page.cpu-gpu table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.slidev-layout.cpu-gpu th,
+.slidev-layout.cpu-gpu td,
+.slidev-page.cpu-gpu th,
+.slidev-page.cpu-gpu td {
+  font-size: 20px;
+  padding: 6px 10px;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
