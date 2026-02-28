@@ -1,6 +1,10 @@
 # Project Notes: Slidev Deck (coding-agent-shogi-ai-talk)
 
-Mermaid flowchart notes live in `docs/mermaid/index.md`.
+Docs indexes:
+- Mermaid: `docs/mermaid.md`
+- Slidev: `docs/slidev.md`
+
+Upstream Mermaid/Slidev docs live under `docs/mermaid/` and `docs/slidev/` (gitignored).
 
 ## Editing Conventions
 

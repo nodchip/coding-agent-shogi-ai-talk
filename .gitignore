@@ -17,3 +17,16 @@ game-tree.png
 mermaid-check.png
 skills-lock.json
 
+
+# Local reference docs (not tracked)
+docs/mermaid/**
+docs/slidev/**
+
+# Keep Codex indexes tracked
+!docs/mermaid/**/
+!docs/slidev/**/
+!docs/mermaid/**/codex-index.md
+!docs/slidev/**/codex-index.md
+
+# Local investigation artifacts
+dom.html
