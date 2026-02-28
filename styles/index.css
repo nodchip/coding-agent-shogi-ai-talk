@@ -214,3 +214,7 @@ a {
 .slidev-page.nnue {
   --two-cols-cols: 1.5fr 0.5fr;
 }
+.slidev-layout.nnue.two-cols .cols > .col:first-child,
+.slidev-page.nnue .slidev-layout.two-cols .cols > .col:first-child {
+  font-size: 26px;
+}
