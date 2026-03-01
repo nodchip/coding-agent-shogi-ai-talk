@@ -456,18 +456,18 @@ layout: center
 ## NNUEへの組み込み可否を相談
 
 - <NW>自分：</NW><NW>「NNUE</NW> <NW>評価関数を</NW><NW>改造して、</NW><NW>入力特徴量から</NW><NW>進行度を</NW><NW>推定し、</NW><NW>LayerStack</NW> <NW>の</NW><NW>切り替えに</NW><NW>使いたい」</NW>
-- <NW>Codex：</NW><NW>「非推奨です。</NW><NW>逆伝播の</NW><NW>連鎖律が</NW><NW>切れて、</NW><NW>学習が</NW><NW>不安定に</NW><NW>なります」</NW>
+- <NW>Codex：</NW><NW>「推奨しません。</NW><NW>逆伝播の</NW><NW>連鎖律が</NW><NW>切れて、</NW><NW>学習が</NW><NW>不安定に</NW><NW>なります」</NW>
 
 ---
 layout: center
 ---
 
-## 既存の進行度推定ロジックを組み込めるか尋ねる
+## 既存ロジックの組み込み可否を確認
 
-- 自分「tanuki_progress.cpp を組み込み、その推定結果を NNUE 評価関数に入力し、レイヤースタックの切り替えに使えますか？」
-- Codex「組み込めます。」
-- 自分「お願いします。」
-- Codex「できました。」
+- <NW>自分：</NW><NW>「tanuki_progress.cpp</NW> <NW>を</NW><NW>組み込み、</NW><NW>推定した</NW><NW>進行度を</NW> <NW>NNUE</NW> <NW>に</NW><NW>入力して、</NW> <NW>LayerStack</NW> <NW>の</NW><NW>切り替えに</NW><NW>使えますか？</NW><NW>」</NW>
+- <NW>Codex：</NW><NW>「組み込めます」</NW>
+- <NW>自分：</NW><NW>「お願いします」</NW>
+- <NW>Codex：</NW><NW>「できました」</NW>
 
 ---
 layout: center
