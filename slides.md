@@ -108,7 +108,7 @@ frameMaxHeight: 260px
 ---
 layout: two-cols
 class: game-tree
-columns: 1.25fr 0.75fr
+columns: 1.3fr 0.7fr
 ---
 
 ## ゲーム木
@@ -140,7 +140,7 @@ flowchart TD
 ---
 layout: two-cols
 class: game-complexity
-columns: 1.35fr 0.65fr
+columns: 1.3fr 0.7fr
 ---
 
 ## 探索量から見たゲームの複雑さ
@@ -166,7 +166,7 @@ columns: 1.35fr 0.65fr
 ---
 layout: two-cols
 class: search-eval
-columns: 1.2fr 0.8fr
+columns: 1.3fr 0.7fr
 ---
 
 ## 探索と評価
@@ -227,7 +227,7 @@ class: cpu-gpu
 ---
 layout: two-cols
 class: nnue
-columns: 1.5fr 0.5fr
+columns: 1.3fr 0.7fr
 ---
 
 ## NNUE 評価関数
@@ -259,7 +259,7 @@ flowchart TD
 ---
 layout: two-cols
 class: halfkp
-columns: 1.45fr 0.55fr
+columns: 1.3fr 0.7fr
 ---
 
 ## HalfKP 特徴量
