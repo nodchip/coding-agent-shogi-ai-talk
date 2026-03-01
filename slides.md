@@ -70,13 +70,14 @@ layout: two-cols
 ## この発表の流れ
 
 ::left::
-- 2. todo(nodchip): スライド全体を作ってからあとで埋める
-- 3. 
-- 4. 
+- 1. <NW>自己紹介</NW>
+- 2. <NW>将棋 AI</NW>（<NW>探索</NW> / <NW>評価</NW> / <NW>NNUE</NW> / <NW>SFNN</NW>）
+- 3. <NW>課題</NW>（<NW>LayerStack</NW> の<NW>切り替え基準</NW>）
 
 ::right::
-- 5. 
-- 6. 
+- 4. <NW>解決方法</NW>（<NW>進行度推定</NW> + <NW>高速化</NW>）
+- 5. <NW>結果</NW>（<NW>強さ</NW> / <NW>速さ</NW>）
+- 6. <NW>まとめ</NW>
 
 ---
 layout: section
