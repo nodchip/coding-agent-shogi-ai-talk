@@ -422,13 +422,12 @@ layout: center
 layout: center
 ---
 
-## Coding Agent を使った実装
+## Copilot Coding による実装
 
-- Copilot Coding
-  - 人間が中心となり、AIは補完・提案・リファクタリング支援を提供する。
-  - 1行／1ブロック単位でコードを実装・修正
-  - 人間とAIが対話的に補完を進める
-  - AIは「補助役」であり、自律的な計画や実装はしない
+- <NW>人間が</NW><NW>主導</NW><NW>し、</NW><NW>AIは</NW><NW>補完・提案・リファクタを</NW><NW>支援</NW>
+- <NW>1行</NW><NW>／</NW><NW>1ブロック</NW><NW>単位で</NW><NW>実装・修正</NW>
+- <NW>人間と</NW><NW>AIが</NW><NW>対話しながら</NW><NW>補完を</NW><NW>進める</NW>
+- <NW>AIは</NW><NW>補助役</NW><NW>（自律的な</NW><NW>計画や</NW><NW>実装は</NW><NW>しない）</NW>
 
 ---
 layout: center
