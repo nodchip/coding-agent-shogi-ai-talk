@@ -433,12 +433,12 @@ layout: center
 layout: center
 ---
 
-## Coding Agent 環境
+## 使用したツール
 
-- OpenAI Codex
-- GPT-5.3-Codex
-- VSCode 拡張機能
-- superpowers
+- <NW>OpenAI</NW> <NW>Codex</NW>
+- <NW>GPT-5.3-Codex</NW>
+- <NW>VSCode</NW> <NW>拡張機能</NW>
+- <NW>superpowers</NW><NW>（定型手順・</NW><NW>安全ルール集）</NW>
 
 ---
 layout: center
