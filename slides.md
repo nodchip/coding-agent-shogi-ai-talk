@@ -500,7 +500,7 @@ layout: center
 layout: center
 ---
 
-## 目視による確認
+## 差分レビュー（目視確認）
 
 ```c++
 inline bool is_valid_bona_piece(int value) {
@@ -513,14 +513,14 @@ inline int32_t contribution(YaneuraOu::Square sq, int bona_piece) {
 }
 ```
 
-- 自分「is_valid_bona_piece() によるアサーションを取り除いてください。」
-- Codex「できました。」
+- <NW>自分：</NW><NW>「</NW><NW>is_valid_bona_piece()</NW> <NW>による</NW><NW>アサーションを</NW><NW>取り除いてください。</NW><NW>」</NW>
+- <NW>Codex：</NW><NW>「できました。</NW><NW>」</NW>
 
 ---
 layout: center
 ---
 
-## 目視による確認
+## 差分レビュー（目視確認）
 
 ```c++
 // logit((i+1)/8) を Q16.16 に丸めた閾値
@@ -537,38 +537,14 @@ int table_index_linear_q16(int64_t sum_q16) {
 }
 ```
 
-- 自分「is_valid_bona_piece() によるアサーションを取り除いてください。」
-- Codex「できました。」
+- <NW>自分：</NW><NW>「</NW><NW>kThresholdsQ16</NW> <NW>に</NW><NW>番兵を</NW><NW>置き、</NW> <NW>idx</NW> <NW><</NW> <NW>7</NW> <NW>を</NW><NW>取り除いてください</NW><NW>」</NW>
+- <NW>Codex：</NW><NW>「できました。</NW><NW>」</NW>
 
 ---
 layout: center
 ---
 
-## 目視による確認
-
-```c++
-// logit((i+1)/8) を Q16.16 に丸めた閾値
-static constexpr int32_t kThresholdsQ16[7] = {
-    -127527, -71999, -33477, 0, 33477, 71999, 127527,
-};
-
-int table_index_linear_q16(int64_t sum_q16) {
-    int idx = 0;
-    while (idx < 7 && sum_q16 >= kThresholdsQ16[idx]) {
-        ++idx;
-    }
-    return idx;
-}
-```
-
-- 自分「kThresholdsQ16 に番兵を置き、 idx < 7 を取り除いてください」
-- Codex「できました。」
-
----
-layout: center
----
-
-## 目視による確認
+## 差分レビュー（目視確認）
 
 ```c++
 // レイヤースタックの選択。Tanuki::Progressが直接indexを返す。
@@ -580,8 +556,8 @@ static int stack_index_for_nnue(const Position& pos) {
 }
 ```
 
-- 自分「Tanuki::Progress::LayerStackIndex() からは 0～7 までの値しか返らないため、クランプ処理を取り除いてください。」
-- Codex「できました。」
+- <NW>自分：</NW><NW>「</NW><NW>Tanuki::Progress::LayerStackIndex()</NW> <NW>からは</NW> <NW>0～7</NW> <NW>までの</NW><NW>値しか</NW><NW>返らないため、</NW><NW>クランプ処理を</NW><NW>取り除いてください。</NW><NW>」</NW>
+- <NW>Codex：</NW><NW>「できました。</NW><NW>」</NW>
 
 ---
 layout: section
