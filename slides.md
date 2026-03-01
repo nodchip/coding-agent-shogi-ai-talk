@@ -446,8 +446,8 @@ layout: center
 
 ## ドメイン理解を依頼する
 
-- <NW>自分</NW><NW>：</NW><NW>「やねうら王の</NW><NW>ソースコードを</NW><NW>読んで、</NW><NW>全体像を</NW><NW>理解してください」</NW>
-- <NW>Codex</NW><NW>：</NW><NW>「理解しました」</NW>
+- <NW>自分：</NW><NW>「やねうら王の</NW><NW>ソースコードを</NW><NW>読んで、</NW><NW>全体像を</NW><NW>理解してください」</NW>
+- <NW>Codex：</NW><NW>「理解しました」</NW>
 
 ---
 layout: center
@@ -455,8 +455,8 @@ layout: center
 
 ## NNUEへの組み込み可否を相談
 
-- <NW>自分</NW><NW>：</NW><NW>「NNUE</NW> <NW>評価関数を</NW><NW>改造して、</NW><NW>入力特徴量から</NW><NW>進行度を</NW><NW>推定し、</NW><NW>LayerStack</NW> <NW>の</NW><NW>切り替えに</NW><NW>使いたい」</NW>
-- <NW>Codex</NW><NW>：</NW><NW>「非推奨です。</NW><NW>逆伝播の</NW><NW>連鎖律が</NW><NW>切れて、</NW><NW>学習が</NW><NW>不安定に</NW><NW>なります」</NW>
+- <NW>自分：</NW><NW>「NNUE</NW> <NW>評価関数を</NW><NW>改造して、</NW><NW>入力特徴量から</NW><NW>進行度を</NW><NW>推定し、</NW><NW>LayerStack</NW> <NW>の</NW><NW>切り替えに</NW><NW>使いたい」</NW>
+- <NW>Codex：</NW><NW>「非推奨です。</NW><NW>逆伝播の</NW><NW>連鎖律が</NW><NW>切れて、</NW><NW>学習が</NW><NW>不安定に</NW><NW>なります」</NW>
 
 ---
 layout: center
