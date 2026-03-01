@@ -482,10 +482,10 @@ layout: center
 layout: center
 ---
 
-## 差分計算による高速化
+## 差分計算で高速化
 
-- 自分「高速化のため、差分計算を実装してください。」
-- Codex「できました。」
+- <NW>自分：</NW><NW>「高速化のため、</NW><NW>差分計算を</NW><NW>実装してください」</NW>
+- <NW>Codex：</NW><NW>「できました」</NW>
 
 ---
 layout: center
