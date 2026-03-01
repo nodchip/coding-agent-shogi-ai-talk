@@ -438,7 +438,7 @@ layout: center
 - <NW>OpenAI</NW> <NW>Codex</NW>
 - <NW>GPT-5.3-Codex</NW>
 - <NW>VSCode</NW> <NW>拡張機能</NW>
-- <NW>superpowers</NW><NW>（定型手順・</NW><NW>安全ルール集）</NW>
+- <NW>superpowers</NW><NW>（定型手順・安全ルール集）</NW>
 
 ---
 layout: center
