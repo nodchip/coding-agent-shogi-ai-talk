@@ -307,17 +307,28 @@ flowchart LR
 </div>
 
 ---
-layout: center
+layout: two-cols
+class: sfnn
 ---
 
-## SFNN（Stockfish側のNNUE構成）
+## SFNN
 
-- NNUE系の代表的な構成例（Stockfishで使われている）
-- 手番側と相手側の2視点を分けて処理し、最後に合成
-- 大きな最初の層＋小さな後段層で、スパース入力を活かす
-- 低精度整数演算（量子化）で、CPU上の高速化を重視
+::left::
 
-参考: https://official-stockfish.github.io/docs/nnue-pytorch-wiki/docs/nnue.html
+- <NW>Stockfish</NW> <NW>チームによる</NW><NW>改良版</NW>
+  - <NW>Stockfish:</NW> <NW>世界最強の</NW><NW>チェス</NW> <NW>AI</NW>
+- <NW>HalfKAv2_hm</NW> <NW>特徴量</NW>
+- <NW>Full_Threats</NW> <NW>特徴量</NW>
+- <NW>Feature Transformer</NW> <NW>の一部の直接出力</NW>
+- <NW>LayerStack</NW>
+- <NW>Element-wise</NW> <NW>multiply</NW>
+- <NW>SqrClippedReLU</NW>
+
+::right::
+
+![](./public/assets/SFNNv9_architecture_detailed_v2.Bw_vbb_h.svg){.sfnn-arch}
+
+[NNUE | Stockfish Docs](https://official-stockfish.github.io/docs/nnue-pytorch-wiki/docs/nnue.html){.sfnn-link}
 
 ---
 layout: section
