@@ -91,8 +91,8 @@ layout: image-right-framed
 image: ./public/assets/2026-02-27-111526.png
 backgroundSize: contain
 columns: 1fr 380px
-frameMaxWidth: 320px
-frameMaxHeight: 260px
+frameMaxWidth: 280px
+frameMaxHeight: 220px
 ---
 
 ## 将棋 AI
