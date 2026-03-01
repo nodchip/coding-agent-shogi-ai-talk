@@ -83,7 +83,7 @@ layout: two-cols
 layout: section
 ---
 
-# 2. 課題
+# 2. 将棋 AI
 
 ---
 layout: image-right-framed
@@ -352,20 +352,20 @@ flowchart LR
     I[入力特徴量] --> A1[隠れ層1]
   end
   A1 --> A2
-  A1 --> B2
-  A1 --> C2
-  subgraph "LayerStack"
+  A1 -.-> B2
+  A1 -.-> C2
+  subgraph "LayerStack（分岐A）"
     A2[隠れ層2] --> A3[隠れ層3]
-    A3 --> O[評価値]
   end
   subgraph "LayerStack（分岐B）"
-    B2[隠れ層2] --> B3[隠れ層3]
-    B3 --> O[評価値]
+    B2[隠れ層2] -.-> B3[隠れ層3]
   end
   subgraph "LayerStack（分岐C）"
-    C2[隠れ層2] --> C3[隠れ層3]
-    C3 --> O[評価値]
+    C2[隠れ層2] -.-> C3[隠れ層3]
   end
+  A3 --> O[評価値]
+  B3 -.-> O
+  C3 -.-> O
 
   classDef default font-weight:700;
   linkStyle default stroke-width:2px;
@@ -377,34 +377,212 @@ flowchart LR
 layout: section
 ---
 
-# 3. 方針（Agent採用理由）
+# 3. 課題
 
 ---
 layout: center
 ---
 
-## なぜ Coding Agent を使うか
+## LayerStack の切り替え基準
 
-- 実装だけでなく検証ループまで自動化できる
-- 試行回数を増やし、改善速度を上げられる
-- 指示テンプレ化で再現性を確保できる
+- <NW>チェス</NW> <NW>AI</NW> <NW>は</NW><NW>残り駒数で</NW><NW>切り替える</NW>
+  - <NW>残り駒数で</NW><NW>進行度が</NW><NW>推定できる</NW>
+  - <NW>進行度を</NW> <NW>8</NW> <NW>段階に</NW><NW>分けて</NW> <NW>LayerStack</NW> <NW>を</NW><NW>切り替える</NW>
+- <NW>将棋は</NW><NW>局面の</NW><NW>駒数が</NW><NW>常に</NW><NW>一定</NW> <NW>→</NW> <NW>残り駒数から</NW><NW>進行度が</NW><NW>推定できない</NW>
+
+---
+layout: center
+---
+
+## 既存の実装
+
+- <NW>玉の</NW><NW>段数の</NW><NW>組み合わせで</NW><NW>切り替える</NW>
+  - <NW>｛先手玉 1～3・4～6・7～9 段目｝</NW><NW>×</NW><NW>｛後手玉 1～3・4～6・7～9 段目｝</NW><NW>の</NW> <NW>9</NW> <NW>通り</NW>
+- <NW>1～3</NW><NW>×</NW><NW>1～3</NW> <NW>に</NW><NW>偏る</NW>
 
 ---
 layout: section
 ---
 
-# 4. 実行プロセス
+# 4. 解決方法
 
 ---
 layout: center
 ---
 
-## 1サイクルの進め方
+## 別の手法の組み込み
 
-1. 目的と制約を明示して依頼
-2. 実装差分を確認
-3. ベンチ・対局・回帰で検証
-4. 結果を踏まえて次の改善へ
+- ロジスティック回帰を使った推定手法を組み込む
+  - KP 特徴量を入力
+  - 0.0～1.0 を出力
+  - 0.0～1.0 を 8 段階に分け、レイヤースタックを切り替える
+- 激指・技巧等が採用
+
+---
+layout: center
+---
+
+## Coding Agent を使った実装
+
+- Copilot Coding
+  - 人間が中心となり、AIは補完・提案・リファクタリング支援を提供する。
+  - 1行／1ブロック単位でコードを実装・修正
+  - 人間とAIが対話的に補完を進める
+  - AIは「補助役」であり、自律的な計画や実装はしない
+
+---
+layout: center
+---
+
+## Coding Agent 環境
+
+- OpenAI Codex
+- GPT-5.3-Codex
+- VSCode 拡張機能
+- superpowers
+
+---
+layout: center
+---
+
+## 将棋 AI を Coding Agent に理解させる
+
+- 自分「やねうら王のソースコードを読んで理解してください」
+- Codex「理解しました」
+
+---
+layout: center
+---
+
+## NNUE 評価関数に組み込めるか尋ねる
+
+- 自分「NNUE 評価関数を改造し、入力特徴量から進行度を推定し、レイヤースタックの切り替えをしたいです。」
+- Codex「お勧めしません。バックプロパゲーションの連鎖律が切れ、学習が不安定になります。」
+
+---
+layout: center
+---
+
+## 既存の進行度推定ロジックを組み込めるか尋ねる
+
+- 自分「tanuki_progress.cpp を組み込み、その推定結果を NNUE 評価関数に入力し、レイヤースタックの切り替えに使えますか？」
+- Codex「組み込めます。」
+- 自分「お願いします。」
+- Codex「できました。」
+
+---
+layout: center
+---
+
+## 量子化による高速化
+
+- 自分「高速化のため、パラメーターを量子化してください。」
+- Codex「できました。」
+
+---
+layout: center
+---
+
+## 差分計算による高速化
+
+- 自分「高速化のため、差分計算を実装してください。」
+- Codex「できました。」
+
+---
+layout: center
+---
+
+## テーブル化による高速化
+
+- 自分「高速化のため、ロジスティック回帰において、シグモイド関数の計算を用に行わず、量子化した計算からテーブル引きで直接レイヤースタックのインデックスを計算するようにしてください。」
+- Codex「できました。」
+
+---
+layout: center
+---
+
+## 目視による確認
+
+```c++
+inline bool is_valid_bona_piece(int value) {
+    return value >= 0 && value < static_cast<int>(YaneuraOu::Eval::fe_end);
+}
+
+inline int32_t contribution(YaneuraOu::Square sq, int bona_piece) {
+    if (!is_valid_bona_piece(bona_piece)) return 0;
+    return g_weights_q16[sq][bona_piece];
+}
+```
+
+- 自分「is_valid_bona_piece() によるアサーションを取り除いてください。」
+- Codex「できました。」
+
+---
+layout: center
+---
+
+## 目視による確認
+
+```c++
+// logit((i+1)/8) を Q16.16 に丸めた閾値
+static constexpr int32_t kThresholdsQ16[7] = {
+    -127527, -71999, -33477, 0, 33477, 71999, 127527,
+};
+
+int table_index_linear_q16(int64_t sum_q16) {
+    int idx = 0;
+    while (idx < 7 && sum_q16 >= kThresholdsQ16[idx]) {
+        ++idx;
+    }
+    return idx;
+}
+```
+
+- 自分「is_valid_bona_piece() によるアサーションを取り除いてください。」
+- Codex「できました。」
+
+---
+layout: center
+---
+
+## 目視による確認
+
+```c++
+// logit((i+1)/8) を Q16.16 に丸めた閾値
+static constexpr int32_t kThresholdsQ16[7] = {
+    -127527, -71999, -33477, 0, 33477, 71999, 127527,
+};
+
+int table_index_linear_q16(int64_t sum_q16) {
+    int idx = 0;
+    while (idx < 7 && sum_q16 >= kThresholdsQ16[idx]) {
+        ++idx;
+    }
+    return idx;
+}
+```
+
+- 自分「kThresholdsQ16 に番兵を置き、 idx < 7 を取り除いてください」
+- Codex「できました。」
+
+---
+layout: center
+---
+
+## 目視による確認
+
+```c++
+// レイヤースタックの選択。Tanuki::Progressが直接indexを返す。
+static int stack_index_for_nnue(const Position& pos) {
+    int idx = Tanuki::Progress::LayerStackIndex(pos);
+    if (idx < 0) idx = 0;
+    if (idx >= kLayerStacks) idx = kLayerStacks - 1;
+    return idx;
+}
+```
+
+- 自分「Tanuki::Progress::LayerStackIndex() からは 0～7 までの値しか返らないため、クランプ処理を取り除いてください。」
+- Codex「できました。」
 
 ---
 layout: section
@@ -416,17 +594,40 @@ layout: section
 layout: center
 ---
 
-## 結果（速度・強さ・品質）
+## 強さ
 
-- 速度: ベンチで改善を確認
-- 強さ: 対局結果で改善を確認
-- 品質: 回帰テストで破壊的変更を抑制
+- レーティング R30.72 向上 (勝率 54.4%)
+
+- 計測環境
+  - CPU: AMD Thread Ripper 3990X
+  - メモリー: 128 GB 
+  - 計測フレームワーク: ShogiBench SPRT
+
+---
+layout: center
+---
+
+## 速さ
+
+| 比較 | 比較元 平均値 | 比較先 平均値 | 変化率 |
+| --- | ---: | ---: | ---: |
+| 量子化後 | 7,361,846 | 7,371,596 | +0.132% |
+| 差分計算後 | 7,371,596 | 7,361,672 | -0.135% |
+| 差分計算後 | 7,371,596 | 7,361,672 | -0.135% |
+| テーブル引き後 | 7,361,672 | 7,401,393 | +0.540% |
+| コード削除後 | 7,401,393 | 7,578,576 | +1.024% |
+
+- 計測環境
+  - CPU: Intel 12900K
+  - メモリー: 64 GB
+  - コマンド: bench 1024 23 15000 default movetime
+  - 5 回計測した平均値
 
 ---
 layout: section
 ---
 
-# 6. 再現可能な運用ルール（まとめ）
+# 6. まとめ
 
 ---
 layout: center
@@ -434,13 +635,13 @@ layout: center
 
 ## まとめ
 
-- Agent は「計測→改善→回帰」まで自動化すると真価が出る
-- 将棋 AI は変更影響が大きいので、検証が最重要
-- 指示テンプレを用意して共創の速度を上げる
+- SFNN のレイヤースタックの選択に、ロジスティック回帰を用いた進行度を使用するようにした。
+- 実装に Coding Agent を用いた。
+- レーティングが R30.72 向上 (勝率 54.4%) した。
+- 
+
 ---
 layout: end
 ---
 
 ありがとうございました
-
-
