@@ -579,6 +579,7 @@ layout: center
 
 ---
 layout: center
+class: speed
 ---
 
 ## 速さ（探索速度）

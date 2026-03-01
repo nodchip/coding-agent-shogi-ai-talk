@@ -227,6 +227,24 @@ a {
   height: 420px;
 }
 
+/* speed */
+.slidev-layout.speed,
+.slidev-page.speed {
+  font-size: 26px;
+}
+
+.slidev-layout.speed table,
+.slidev-page.speed table {
+  font-size: 22px;
+}
+
+.slidev-layout.speed th,
+.slidev-layout.speed td,
+.slidev-page.speed th,
+.slidev-page.speed td {
+  padding: 6px 10px;
+}
+
 /* cpu-gpu */
 .slidev-layout.cpu-gpu table,
 .slidev-page.cpu-gpu table {
