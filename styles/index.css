@@ -332,3 +332,14 @@ a {
   font-size: 18px;
   margin-top: 6px;
 }
+
+/* center title spacing */
+.slidev-layout.center > .my-auto > :is(h1, h2, h3):first-child,
+.slidev-page .slidev-layout.center > .my-auto > :is(h1, h2, h3):first-child {
+  margin-bottom: 18px;
+}
+
+.slidev-layout.center > .my-auto > :is(h1, h2, h3):first-child + *,
+.slidev-page .slidev-layout.center > .my-auto > :is(h1, h2, h3):first-child + * {
+  margin-top: 0;
+}
