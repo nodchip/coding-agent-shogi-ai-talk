@@ -569,14 +569,13 @@ layout: section
 layout: center
 ---
 
-## 強さ
+## 強さ（レーティング）
 
-- レーティング R30.72 向上 (勝率 54.4%)
-
-- 計測環境
-  - CPU: AMD Thread Ripper 3990X
-  - メモリー: 128 GB 
-  - 計測フレームワーク: ShogiBench SPRT
+- <NW>レーティング</NW> <NW>R30.72</NW> <NW>向上</NW>（<NW>勝率</NW> <NW>54.4%</NW>）
+- <NW>計測環境</NW>
+  - <NW>CPU:</NW> <NW>AMD</NW> <NW>Threadripper</NW> <NW>3990X</NW>
+  - <NW>メモリ:</NW> <NW>128</NW> <NW>GB</NW>
+  - <NW>計測フレームワーク:</NW> <NW>ShogiBench</NW> <NW>SPRT</NW>
 
 ---
 layout: center
