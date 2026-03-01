@@ -65,6 +65,7 @@ layout: center
 
 ---
 layout: two-cols
+columns: 1fr 1fr
 ---
 
 ## この発表の流れ
