@@ -453,10 +453,10 @@ layout: center
 layout: center
 ---
 
-## NNUE 評価関数に組み込めるか尋ねる
+## NNUEへの組み込み可否を相談
 
-- 自分「NNUE 評価関数を改造し、入力特徴量から進行度を推定し、レイヤースタックの切り替えをしたいです。」
-- Codex「お勧めしません。バックプロパゲーションの連鎖律が切れ、学習が不安定になります。」
+- <NW>自分</NW><NW>：</NW><NW>「NNUE</NW> <NW>評価関数を</NW><NW>改造して、</NW><NW>入力特徴量から</NW><NW>進行度を</NW><NW>推定し、</NW><NW>LayerStack</NW> <NW>の</NW><NW>切り替えに</NW><NW>使いたい」</NW>
+- <NW>Codex</NW><NW>：</NW><NW>「非推奨です。</NW><NW>逆伝播の</NW><NW>連鎖律が</NW><NW>切れて、</NW><NW>学習が</NW><NW>不安定に</NW><NW>なります」</NW>
 
 ---
 layout: center
