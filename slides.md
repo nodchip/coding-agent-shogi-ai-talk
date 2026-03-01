@@ -60,9 +60,8 @@ layout: center
 
 ## 今日持ち帰ってほしいこと
 
-1. todo(nodchip): スライド全体を作ってからあとで埋める
-2. 
-3. 
+1. <NW>将棋 AI の</NW><NW>全体像</NW><NW>（探索・</NW><NW>評価・</NW><NW>NNUE・</NW><NW>SFNN）</NW>
+2. <NW>Coding Agent</NW><NW>（Copilot Coding）</NW>
 
 ---
 layout: two-cols
