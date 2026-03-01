@@ -11,6 +11,13 @@ Upstream Mermaid/Slidev docs live under `docs/mermaid/` and `docs/slidev/` (giti
 - `slides.md` is UTF-8. Read/write with UTF-8 to avoid mojibake.
 - Mermaid blocks must use fenced code blocks: ` ```mermaid ` … ` ``` ` (not inline backticks).
 
+
+## Slide Editing Safety
+
+- When changing a single slide, keep edits inside its `---` frontmatter block and do not merge/move neighboring slides.
+- After automated edits, ensure Mermaid fences are intact: `rg "```mermaid" slides.md` (avoid accidental `` `mermaid ``).
+- After automated edits, ensure no literal `\\n` remains in text: `rg "\\\\n" slides.md styles/index.css`.
+
 ## Slidev Layouts
 
 - For “image on the right with a framed box”, use `layout: image-right-framed` (custom layout in `layouts/image-right-framed.vue`).
