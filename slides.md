@@ -124,13 +124,13 @@ columns: 1.3fr 0.7fr
 ```mermaid
 %%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart TD
-  A@{ img: "/assets/image4.png", h: 110, constraint: "on" } --> B1@{ img: "/assets/image6.png", h: 110, constraint: "on" }
-  A --> B2@{ img: "/assets/image5.png", h: 110, constraint: "on" }
-  B1 --> C1@{ img: "/assets/image8.png", h: 110, constraint: "on" }
-  B1 --> C2@{ img: "/assets/image7.png", h: 110, constraint: "on" }
+  A@{ img: "./assets/image4.png", h: 110, constraint: "on" } --> B1@{ img: "./assets/image6.png", h: 110, constraint: "on" }
+  A --> B2@{ img: "./assets/image5.png", h: 110, constraint: "on" }
+  B1 --> C1@{ img: "./assets/image8.png", h: 110, constraint: "on" }
+  B1 --> C2@{ img: "./assets/image7.png", h: 110, constraint: "on" }
   B2 --> C3[...]
-  C1 --> D1@{ img: "/assets/image9.png", h: 110, constraint: "on" }
-  C1 --> D2@{ img: "/assets/image10.png", h: 110, constraint: "on" }
+  C1 --> D1@{ img: "./assets/image9.png", h: 110, constraint: "on" }
+  C1 --> D2@{ img: "./assets/image10.png", h: 110, constraint: "on" }
   C2 --> D3[...]
   D1 --> E1[...]
   D2 --> E2[...]
