@@ -609,9 +609,9 @@ layout: center
 
 ## まとめ
 
-- SFNN のレイヤースタックの選択に、ロジスティック回帰を用いた進行度を使用するようにした。
-- 実装に Coding Agent を用いた。
-- レーティングが R30.72 向上 (勝率 54.4%) した。
+- <NW>ロジスティック回帰で</NW><NW>推定した</NW><NW>進行度を、</NW> <NW>SFNN の</NW> <NW>LayerStack 選択に</NW><NW>使った。</NW>
+- <NW>実装は</NW> <NW>Copilot Coding を</NW> <NW>使って</NW><NW>進めた。</NW>
+- <NW>レーティングが</NW> <NW>R30.72</NW> <NW>向上</NW> <NW>（勝率 54.4%）。</NW>
 
 ---
 layout: end
