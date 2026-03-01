@@ -595,7 +595,7 @@ class: speed
   - <NW>CPU:</NW> <NW>Intel</NW> <NW>12900K</NW>
   - <NW>メモリ:</NW> <NW>64</NW> <NW>GB</NW>
   - <NW>コマンド:</NW> <NW>bench</NW> <NW>1024</NW> <NW>23</NW> <NW>15000</NW> <NW>default</NW> <NW>movetime</NW>
-  - <NW>5</NW> <NW>回</NW> <NW>計測</NW>した <NW>平均値</NW>
+  - <NW>5</NW> <NW>回</NW><NW>計測した</NW><NW>平均値</NW>
 
 ---
 layout: section
