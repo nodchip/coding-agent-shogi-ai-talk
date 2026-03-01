@@ -36,14 +36,16 @@ const imgStyle = computed(() => ({
 
 <template>
   <div
-    class="image-right-framed grid w-full h-full auto-rows-fr"
+    class="image-right-framed panel-card grid w-full h-full auto-rows-fr"
     :style="{ gridTemplateColumns: props.columns }"
   >
-    <div class="slidev-layout default" :class="props.class">
-      <slot />
+    <div class="image-right-framed__left">
+      <div class="slidev-layout default" :class="props.class">
+        <slot />
+      </div>
     </div>
-    <div class="image-right-framed__col">
-      <div class="image-right-framed__frame">
+    <div class="image-right-framed__right">
+      <div class="image-right-framed__media">
         <img
           v-if="props.image"
           class="image-right-framed__image"
@@ -60,26 +62,34 @@ const imgStyle = computed(() => ({
 </template>
 
 <style scoped>
-.image-right-framed__col {
+.image-right-framed {
+  padding: 28px 32px;
+  gap: 28px;
+}
+
+.image-right-framed__left {
+  height: 100%;
+  min-width: 0;
   display: grid;
-  place-items: center;
-  padding: 28px;
+  align-content: start;
+}
+
+.image-right-framed__right {
+  display: grid;
   align-content: center;
+  justify-items: center;
   gap: 12px;
 }
 
-.image-right-framed__frame {
-  display: inline-block;
-  border-radius: 16px;
-  border: 1px solid rgba(15, 23, 42, 0.18);
-  background: rgba(255, 255, 255, 0.72);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-  padding: 14px;
+.image-right-framed__media {
+  width: 100%;
+  display: grid;
+  place-items: center;
 }
 
 .image-right-framed__image {
   display: block;
-  border-radius: 12px;
+  border-radius: 14px;
   background-color: rgba(15, 23, 42, 0.03);
 }
 
@@ -89,12 +99,6 @@ const imgStyle = computed(() => ({
 
 .image-right-framed__below :deep(p) {
   margin: 0;
-}
-
-html.dark .image-right-framed__frame {
-  border-color: rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.42);
 }
 
 html.dark .image-right-framed__image {

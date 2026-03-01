@@ -142,8 +142,54 @@ a {
   object-fit: initial;
   background: transparent;
 }
+/* panel-card */
+.panel-card,
+.slidev-layout.center > .my-auto,
+.slidev-page .slidev-layout.center > .my-auto {
+  border-radius: 16px;
+  border: 1px solid var(--panel-border);
+  background: linear-gradient(180deg, var(--panel), color-mix(in oklab, var(--panel) 60%, transparent));
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--panel-border) 70%, transparent), 0 18px 60px rgba(0, 0, 0, 0.18);
+}
+
+/* center layout */
+.slidev-layout.center,
+.slidev-page .slidev-layout.center {
+  padding: 28px;
+}
+
+.slidev-layout.center > .my-auto,
+.slidev-page .slidev-layout.center > .my-auto {
+  width: min(1100px, 100%);
+  padding: 28px 32px;
+}
+
+.slidev-layout.center > .my-auto > :first-child,
+.slidev-page .slidev-layout.center > .my-auto > :first-child {
+  margin-top: 0;
+}
 
 /* Slide-specific tweaks */
+/* center padding overrides (avoid vertical clipping on dense slides) */
+.slidev-layout.center.params-bias,
+.slidev-page.params-bias .slidev-layout.center {
+  padding: 18px;
+}
+
+.slidev-layout.center.params-bias > .my-auto,
+.slidev-page.params-bias .slidev-layout.center > .my-auto {
+  padding: 18px 22px;
+}
+
+.slidev-layout.center.speed,
+.slidev-page.speed .slidev-layout.center {
+  padding: 20px;
+}
+
+.slidev-layout.center.speed > .my-auto,
+.slidev-page.speed .slidev-layout.center > .my-auto {
+  padding: 18px 22px;
+}
 
 
 .slidev-layout.params-bias,
@@ -163,7 +209,7 @@ a {
 .slidev-page.params-bias .params-bias-desc {
   flex: 0 0 35%;
   min-height: 0;
-  font-size: 26px;
+  font-size: 24px;
 }
 
 .slidev-layout.params-bias .params-bias-desc ul,
@@ -190,7 +236,7 @@ a {
 .slidev-layout.params-bias .params-bias-diag .mermaid svg,
 .slidev-page.params-bias .params-bias-diag .mermaid svg {
   width: 100%;
-  height: 320px;
+  height: 300px;
 }
 
 
@@ -213,19 +259,20 @@ a {
 /* speed */
 .slidev-layout.speed,
 .slidev-page.speed {
-  font-size: 26px;
+  font-size: 24px;
 }
 
 .slidev-layout.speed table,
 .slidev-page.speed table {
-  font-size: 22px;
+  font-size: 20px;
+  margin: 10px 0;
 }
 
 .slidev-layout.speed th,
 .slidev-layout.speed td,
 .slidev-page.speed th,
 .slidev-page.speed td {
-  padding: 6px 10px;
+  padding: 5px 8px;
 }
 
 /* cpu-gpu */
