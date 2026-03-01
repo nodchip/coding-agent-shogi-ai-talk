@@ -444,10 +444,10 @@ layout: center
 layout: center
 ---
 
-## 将棋 AI を Coding Agent に理解させる
+## ドメイン理解を依頼する
 
-- 自分「やねうら王のソースコードを読んで理解してください」
-- Codex「理解しました」
+- <NW>自分</NW><NW>：</NW><NW>「やねうら王の</NW><NW>ソースコードを</NW><NW>読んで、</NW><NW>全体像を</NW><NW>理解してください」</NW>
+- <NW>Codex</NW><NW>：</NW><NW>「理解しました」</NW>
 
 ---
 layout: center
