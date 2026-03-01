@@ -1,9 +1,18 @@
+<script setup lang="ts">
+const props = defineProps({
+  columns: {
+    type: String,
+    default: '1fr 1fr',
+  },
+})
+</script>
+
 <template>
   <div class="slidev-layout two-cols">
     <div class="top">
       <slot />
     </div>
-    <div class="cols">
+    <div class="cols" :style="{ gridTemplateColumns: props.columns }">
       <div class="col">
         <slot name="left" />
       </div>
@@ -26,7 +35,6 @@
 .cols {
   margin-top: var(--two-cols-card-gap, 16px);
   display: grid;
-  grid-template-columns: var(--two-cols-cols, 1fr 1fr);
   gap: var(--two-cols-gap, 28px);
   padding: var(--two-cols-padding, 28px);
   border-radius: 16px;
@@ -37,4 +45,3 @@
   margin-top: 0;
 }
 </style>
-

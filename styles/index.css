@@ -144,25 +144,8 @@ a {
 }
 
 /* Slide-specific tweaks */
-.slidev-layout.game-tree,
-.slidev-page.game-tree {
-  --two-cols-cols: 1.25fr 0.75fr;
-}
 
-.slidev-layout.game-complexity,
-.slidev-page.game-complexity {
-  --two-cols-cols: 1.35fr 0.65fr;
-}
 
-.slidev-layout.search-eval,
-.slidev-page.search-eval {
-  /* Keep left wider, but give the diagram enough width so text scales up visually. */
-  --two-cols-cols: 1.2fr 0.8fr;
-}
-.slidev-layout.halfkp,
-.slidev-page.halfkp {
-  --two-cols-cols: 1.45fr 0.55fr;
-}
 .slidev-layout.params-bias,
 .slidev-page.params-bias {
   text-align: left;
@@ -277,17 +260,7 @@ a {
   font-size: 16px;
   line-height: 1.25;
 }
-/* nnue-fc */
-.slidev-layout.nnue-fc,
-.slidev-page.nnue-fc {
-  --two-cols-cols: 1.4fr 0.6fr;
-}
 /* nnue */
-.slidev-layout.nnue,
-.slidev-page.nnue {
-  --two-cols-cols: 1.5fr 0.5fr;
-}
-
 .slidev-layout.nnue.two-cols .cols > .col:first-child,
 .slidev-page.nnue .slidev-layout.two-cols .cols > .col:first-child {
   font-size: 26px;
@@ -296,7 +269,6 @@ a {
 /* sfnn */
 .slidev-layout.sfnn,
 .slidev-page.sfnn {
-  --two-cols-cols: 1.3fr 0.7fr;
   font-size: 26px;
 }
 .sfnn-arch {
