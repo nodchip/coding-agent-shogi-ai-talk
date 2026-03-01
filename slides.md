@@ -90,7 +90,7 @@ layout: section
 layout: image-right-framed
 image: ./public/assets/2026-02-27-111526.png
 backgroundSize: contain
-columns: 1fr 380px
+columns: 1.3fr 0.7fr
 frameMaxWidth: 280px
 frameMaxHeight: 220px
 ---
@@ -469,11 +469,9 @@ layout: center
 layout: center
 ---
 
-## 既存の進行度推定ロジックを組み込めるか尋ねる
+## 既存の進行度推定ロジックを組み込む
 
-- <NW>自分：</NW><NW>「</NW><NW>tanuki_progress.cpp</NW> <NW>を</NW><NW>組み込み、</NW><NW>推定した</NW><NW>進行度を</NW><NW>NNUE</NW> <NW>に</NW><NW>入力して、</NW><NW>LayerStack</NW> <NW>の</NW><NW>切り替えに</NW><NW>使えますか？</NW><NW>」</NW>
-- <NW>Codex：</NW><NW>「組み込めます」</NW>
-- <NW>自分：</NW><NW>「お願いします」</NW>
+- <NW>自分：</NW><NW>「</NW><NW>tanuki_progress.cpp</NW> <NW>を</NW><NW>組み込み、</NW><NW>推定した</NW><NW>進行度を</NW><NW>NNUE</NW> <NW>に</NW><NW>入力して、</NW><NW>LayerStack</NW> <NW>の</NW><NW>切り替えに</NW><NW>使ってください」</NW>
 - <NW>Codex：</NW><NW>「できました」</NW>
 
 ---
