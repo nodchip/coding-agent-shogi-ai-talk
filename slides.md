@@ -581,7 +581,7 @@ layout: center
 layout: center
 ---
 
-## 速さ
+## 速さ（探索速度）
 
 | 比較 | 比較元 平均値 | 比較先 平均値 | 変化率 |
 | --- | ---: | ---: | ---: |
@@ -590,11 +590,11 @@ layout: center
 | テーブル引き後 | 7,361,672 | 7,401,393 | +0.540% |
 | コード削除後 | 7,401,393 | 7,578,576 | +1.024% |
 
-- 計測環境
-  - CPU: Intel 12900K
-  - メモリー: 64 GB
-  - コマンド: bench 1024 23 15000 default movetime
-  - 5 回計測した平均値
+- <NW>計測環境</NW>
+  - <NW>CPU:</NW> <NW>Intel</NW> <NW>12900K</NW>
+  - <NW>メモリ:</NW> <NW>64</NW> <NW>GB</NW>
+  - <NW>コマンド:</NW> <NW>bench</NW> <NW>1024</NW> <NW>23</NW> <NW>15000</NW> <NW>default</NW> <NW>movetime</NW>
+  - <NW>5</NW> <NW>回</NW> <NW>計測</NW>した <NW>平均値</NW>
 
 ---
 layout: section
