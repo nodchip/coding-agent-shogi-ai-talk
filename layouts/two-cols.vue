@@ -24,6 +24,7 @@
   margin: 0;
 }
 .cols {
+  margin-top: var(--two-cols-card-gap, 16px);
   display: grid;
   grid-template-columns: var(--two-cols-cols, 1fr 1fr);
   gap: var(--two-cols-gap, 28px);
