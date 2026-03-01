@@ -493,7 +493,7 @@ layout: center
 
 ## テーブル引きで高速化
 
-- <NW>自分：</NW><NW>「高速化のため、</NW><NW>ロジスティック回帰の</NW><NW>シグモイド計算を</NW><NW>やめて、</NW><NW>量子化結果から</NW><NW>テーブル引きで</NW><NW>LayerStack</NW> <NW>の</NW><NW>インデックスを</NW><NW>直接</NW><NW>求める</NW><NW>ようにしてください」</NW>
+- <NW>自分：</NW><NW>「高速化のため、</NW><NW>ロジスティック回帰の</NW><NW>シグモイド計算を</NW><NW>やめて、</NW><NW>量子化した</NW><NW>重みパラメーターで</NW> <NW>KP</NW> <NW>特徴量の</NW><NW>寄与を</NW><NW>足し合わせた</NW><NW>値から、</NW><NW>テーブル引きで</NW><NW>LayerStack</NW> <NW>の</NW><NW>インデックスを</NW><NW>直接</NW><NW>求める</NW><NW>ようにしてください」</NW>
 - <NW>Codex：</NW><NW>「できました」</NW>
 
 ---
