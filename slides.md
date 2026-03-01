@@ -331,6 +331,49 @@ class: sfnn
 [NNUE | Stockfish Docs](https://official-stockfish.github.io/docs/nnue-pytorch-wiki/docs/nnue.html){.sfnn-link}
 
 ---
+layout: center
+class: params-bias
+---
+
+## LayerStack
+
+<div class="params-bias-desc">
+<ul>
+  <li>隠れ層 2 層以降を複数用意し、状況に応じて切り替える</li>
+</ul>
+</div>
+
+<div class="params-bias-diag">
+
+```mermaid
+%%{init: {'flowchart': {'useMaxWidth': true}}}%%
+flowchart LR
+  subgraph "パラメーター数: 大"
+    I[入力特徴量] --> A1[隠れ層1]
+  end
+  A1 --> A2
+  A1 --> B2
+  A1 --> C2
+  subgraph "LayerStack"
+    A2[隠れ層2] --> A3[隠れ層3]
+    A3 --> O[評価値]
+  end
+  subgraph "LayerStack（分岐B）"
+    B2[隠れ層2] --> B3[隠れ層3]
+    B3 --> O[評価値]
+  end
+  subgraph "LayerStack（分岐C）"
+    C2[隠れ層2] --> C3[隠れ層3]
+    C3 --> O[評価値]
+  end
+
+  classDef default font-weight:700;
+  linkStyle default stroke-width:2px;
+```
+
+</div>
+
+---
 layout: section
 ---
 
