@@ -35,34 +35,48 @@ const imgStyle = computed(() => ({
 </script>
 
 <template>
-  <div
-    class="image-right-framed panel-card grid w-full h-full auto-rows-fr"
-    :style="{ gridTemplateColumns: props.columns }"
-  >
-    <div class="image-right-framed__left">
-      <div class="slidev-layout default" :class="props.class">
-        <slot />
+  <div class="slidev-layout image-right-framed">
+    <div
+      class="image-right-framed__card panel-card grid w-full"
+      :style="{ gridTemplateColumns: props.columns }"
+    >
+      <div class="image-right-framed__left">
+        <div class="slidev-layout default" :class="props.class">
+          <slot />
+        </div>
       </div>
-    </div>
-    <div class="image-right-framed__right">
-      <div class="image-right-framed__media">
-        <img
-          v-if="props.image"
-          class="image-right-framed__image"
-          :src="props.image"
-          alt=""
-          :style="imgStyle"
-        >
-      </div>
-      <div class="image-right-framed__below">
-        <slot name="right" />
+      <div class="image-right-framed__right">
+        <div class="image-right-framed__media">
+          <img
+            v-if="props.image"
+            class="image-right-framed__image"
+            :src="props.image"
+            alt=""
+            :style="imgStyle"
+          >
+        </div>
+        <div class="image-right-framed__below">
+          <slot name="right" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.image-right-framed {
+.slidev-layout.image-right-framed {
+  height: 100%;
+  padding: 28px;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.image-right-framed__card {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin: 0 auto;
+  width: min(1100px, 100%);
+
   padding: 28px 32px;
   gap: 28px;
 }
