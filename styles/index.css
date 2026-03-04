@@ -354,35 +354,3 @@ html:not(.dark) .slidev-layout.end :is(h1, h2, h3, p, div, span),
 html:not(.dark) .slidev-page .slidev-layout.end :is(h1, h2, h3, p, div, span) {
   color: var(--text) !important;
 }
-/* reveal */
-details.reveal {
-  border-radius: 12px;
-  border: 1px solid var(--panel-border);
-  background: color-mix(in oklab, var(--panel) 85%, transparent);
-  padding: 8px 10px;
-}
-
-details.reveal > summary {
-  cursor: pointer;
-  user-select: none;
-  list-style: none;
-}
-
-details.reveal > summary::-webkit-details-marker {
-  display: none;
-}
-
-details.reveal > summary::after {
-  content: '▼';
-  margin-left: 10px;
-  font-size: 0.8em;
-  color: var(--muted);
-}
-
-details.reveal[open] > summary::after {
-  content: '▲';
-}
-
-details.reveal[open] > summary {
-  margin-bottom: 8px;
-}
