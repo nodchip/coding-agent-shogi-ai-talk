@@ -26,8 +26,8 @@ wakeLock: false
     <div>
       <div>野田 久順</div>
       <div class="muted">ザイオソフト コンピューター将棋サークル</div>
+      <div class="muted">2026-04-19</div>
     </div>
-    <div class="muted">2026-04-19</div>
   </div>
 </div>
 
