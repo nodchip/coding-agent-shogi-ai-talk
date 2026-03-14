@@ -442,8 +442,8 @@ layout: center
 
 ## 使用したツール
 
-- <NW>OpenAI</NW> <NW>Codex</NW>
-- <NW>GPT-5.3-Codex</NW>
+- <NW>OpenAI</NW> <NW>Codex</NW> <NW>(のちに Gemini CLI でも追試)</NW>
+- <NW>GPT-5.3-Codex</NW> <NW>(追試時は Gemini 3.1 Pro)</NW>
 - <NW>VSCode</NW> <NW>拡張機能</NW>
 - <NW>superpowers</NW><NW>（定型手順・安全ルール集）</NW>
 
