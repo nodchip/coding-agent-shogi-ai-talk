@@ -443,7 +443,35 @@ layout: center
 layout: center
 ---
 
-## Copilot Coding による実装
+## Coding Agent
+<NW>コードの</NW><NW>理解・生成・修正を</NW><NW>自律的に</NW><NW>進める</NW><NW>AI</NW><NW>エージェント</NW>
+
+| 企業名 | Coding Agent 名 |
+| --- | --- |
+| Google | Gemini CLI/Antigravity |
+| OpenAI | Codex |
+| Anthropic | Claude Code |
+
+---
+layout: center
+---
+
+## Coding Agent を用いた Coding Style
+
+- Copilot Coding
+- Prompt-driven Coding
+- Agentic Coding
+- Review-driven Coding
+- Spec-driven Coding
+- Test-driven Agent Coding
+- Vibe Coding
+- Multi-Agent Coding
+
+---
+layout: center
+---
+
+## Copilot Coding
 
 - <NW>人間が</NW><NW>主導</NW><NW>し、</NW><NW>AIは</NW><NW>補完・提案・リファクタを</NW><NW>支援</NW>
 - <NW>1行</NW><NW>／</NW><NW>1ブロック</NW><NW>単位で</NW><NW>実装・修正</NW>
@@ -468,7 +496,7 @@ layout: center
 ## ドメイン理解を依頼する
 
 - <NW>自分：</NW><NW>「やねうら王の</NW><NW>ソースコードを</NW><NW>読んで、</NW><NW>全体像を</NW><NW>理解してください」</NW>
-- <NW>Codex：</NW><NW>「理解しました」</NW>
+- <NW>Coding Agent：</NW><NW>「理解しました」</NW>
 
 ---
 layout: center
@@ -477,7 +505,7 @@ layout: center
 ## NNUEへの組み込み可否を相談
 
 - <NW>自分：</NW><NW>「NNUE</NW> <NW>評価関数を</NW><NW>改造して、</NW><NW>入力特徴量から</NW><NW>進行度を</NW><NW>推定し、</NW><NW>LayerStack</NW> <NW>の</NW><NW>切り替えに</NW><NW>使いたい」</NW>
-- <NW>Codex：</NW><NW>「推奨しません。</NW><NW>逆伝播の</NW><NW>連鎖律が</NW><NW>切れて、</NW><NW>学習が</NW><NW>不安定に</NW><NW>なります」</NW>
+- <NW>Coding Agent：</NW><NW>「推奨しません。</NW><NW>逆伝播の</NW><NW>連鎖律が</NW><NW>切れて、</NW><NW>学習が</NW><NW>不安定に</NW><NW>なります」</NW>
 
 ---
 layout: center
@@ -486,7 +514,7 @@ layout: center
 ## 既存の進行度推定ロジックを組み込む
 
 - <NW>自分：</NW><NW>「</NW><NW>tanuki_progress.cpp</NW> <NW>を</NW><NW>組み込み、</NW><NW>推定した</NW><NW>進行度を</NW><NW>NNUE</NW> <NW>に</NW><NW>入力して、</NW><NW>LayerStack</NW> <NW>の</NW><NW>切り替えに</NW><NW>使ってください」</NW>
-- <NW>Codex：</NW><NW>「できました」</NW>
+- <NW>Coding Agent：</NW><NW>「できました」</NW>
 
 ---
 layout: center
@@ -495,7 +523,7 @@ layout: center
 ## 量子化による高速化
 
 - <NW>自分：</NW><NW>「高速化のため、</NW><NW>パラメーターを</NW><NW>量子化してください」</NW>
-- <NW>Codex：</NW><NW>「できました」</NW>
+- <NW>Coding Agent：</NW><NW>「できました」</NW>
 
 ---
 layout: center
@@ -504,7 +532,7 @@ layout: center
 ## 差分計算で高速化
 
 - <NW>自分：</NW><NW>「高速化のため、</NW><NW>差分計算を</NW><NW>実装してください」</NW>
-- <NW>Codex：</NW><NW>「できました」</NW>
+- <NW>Coding Agent：</NW><NW>「できました」</NW>
 
 ---
 layout: center
@@ -513,7 +541,7 @@ layout: center
 ## テーブル引きで高速化
 
 - <NW>自分：</NW><NW>「高速化のため、</NW><NW>ロジスティック回帰の</NW><NW>シグモイド計算を</NW><NW>やめて、</NW><NW>量子化した</NW><NW>重みパラメーターを</NW> <NW>KP</NW> <NW>特徴量に</NW><NW>応じて</NW><NW>足し合わせた</NW><NW>値から、</NW><NW>テーブル引きで</NW><NW>LayerStack</NW> <NW>の</NW><NW>インデックスを</NW><NW>直接</NW><NW>求める</NW><NW>ようにしてください」</NW>
-- <NW>Codex：</NW><NW>「できました」</NW>
+- <NW>Coding Agent：</NW><NW>「できました」</NW>
 
 ---
 layout: center
@@ -533,7 +561,7 @@ inline int32_t contribution(YaneuraOu::Square sq, int bona_piece) {
 ```
 
 - <NW>自分：</NW><NW>「</NW><NW>is_valid_bona_piece()</NW> <NW>による</NW><NW>アサーションを</NW><NW>取り除いてください。</NW><NW>」</NW>
-- <NW>Codex：</NW><NW>「できました。</NW><NW>」</NW>
+- <NW>Coding Agent：</NW><NW>「できました。</NW><NW>」</NW>
 
 ---
 layout: center
@@ -557,7 +585,7 @@ int table_index_linear_q16(int64_t sum_q16) {
 ```
 
 - <NW>自分：</NW><NW>「</NW><NW>kThresholdsQ16</NW> <NW>に</NW><NW>番兵を</NW><NW>置き、</NW> <NW>idx</NW> <NW><</NW> <NW>7</NW> <NW>を</NW><NW>取り除いてください</NW><NW>」</NW>
-- <NW>Codex：</NW><NW>「できました。</NW><NW>」</NW>
+- <NW>Coding Agent：</NW><NW>「できました。</NW><NW>」</NW>
 
 ---
 layout: center
@@ -576,7 +604,7 @@ static int stack_index_for_nnue(const Position& pos) {
 ```
 
 - <NW>自分：</NW><NW>「</NW><NW>Tanuki::Progress::LayerStackIndex()</NW> <NW>からは</NW> <NW>0～7</NW> <NW>までの</NW><NW>値しか</NW><NW>返らないため、</NW><NW>クランプ処理を</NW><NW>取り除いてください。</NW><NW>」</NW>
-- <NW>Codex：</NW><NW>「できました。</NW><NW>」</NW>
+- <NW>Coding Agent：</NW><NW>「できました。</NW><NW>」</NW>
 
 ---
 layout: section
