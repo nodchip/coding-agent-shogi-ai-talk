@@ -106,20 +106,6 @@ frameMaxHeight: 220px
 [ShogiHome](https://sunfish-shogi.github.io/shogihome/)
 
 ---
-layout: center
----
-
-## 二人零和有限確定完全情報ゲーム
-
-- <NW>二人：</NW><NW>二人の</NW><NW>プレイヤーが</NW><NW>対戦する</NW><NW>ゲーム</NW>
-- <NW>零和：</NW><NW>一方の</NW><NW>得が</NW><NW>そのまま</NW><NW>相手の</NW><NW>損に</NW><NW>なる</NW><NW>ゲーム</NW>
-- <NW>有限：</NW><NW>手順を</NW><NW>進めれば</NW><NW>必ず</NW><NW>終了する</NW><NW>ゲーム</NW>
-- <NW>確定：</NW><NW>サイコロや</NW><NW>乱数のような</NW><NW>偶然の</NW><NW>要素を</NW><NW>含まない</NW>
-- <NW>完全情報：</NW><NW>各手番で</NW><NW>盤面や</NW><NW>相手の</NW><NW>選択肢を</NW><NW>すべて</NW><NW>把握できる</NW>
-
-- <NW>この性質を</NW><NW>満たす</NW><NW>ゲームでは、</NW><NW>最善を</NW><NW>尽くした</NW><NW>ときの</NW><NW>結果が</NW><NW>理論上</NW><NW>定まる</NW>
-
----
 layout: two-cols
 class: game-tree
 columns: 1.3fr 0.7fr
